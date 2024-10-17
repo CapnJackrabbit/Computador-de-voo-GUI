@@ -1,5 +1,5 @@
 from tkinter import *
-import subida, tas, dvt
+import subida, tas, dvt, acd
 from PIL import Image, ImageTk
 
 janela = Tk()
@@ -22,7 +22,7 @@ image_label.place(x=38,y=30)
 botao1 = Button(frame, text='Calculo de subida', command=subida.janela_callback, height=1, width=15)
 botao1.place(x=25, y=100)
 
-botao2 = Button(frame, text='Calculo de ACD', command=subida, height=1, width=15, fg='red')
+botao2 = Button(frame, text='Calculo de ACD', command=acd.janela_callback, height=1, width=15)
 botao2.place(x=25, y=150)
 
 botao3 = Button(frame, text='Calculo de TAS', command=tas.janela_callback, height=1, width=15)

@@ -44,9 +44,6 @@ def janela_callback():
     frame_res = LabelFrame(janela_subida, text='Resultado')
     frame_res.place(x=400, y=0, height=250, width=380)
 
-    # titulo = Label(janela_subida, text='Calculo de subida', fg='red', font=('segoe', 15))
-    # titulo.grid(column=1, row=0, pady=10)
-
     tempo = Label(janela_subida, text='  Tempo (minutos) ')
     tempo.place(x=20, y=30)
     entrada_tempo = Entry(janela_subida)
@@ -67,11 +64,5 @@ def janela_callback():
 
     resultado = Label(janela_subida, text='')
     resultado.place(x=420, y=20)
-
-    # res_distancia = Label(janela_subida, text='')
-    # res_distancia.place(x=420, y=40)
-
-    # res_velocidade = Label(janela_subida, text='')
-    # res_velocidade.place(x=420, y=60)
 
     janela_subida.mainloop()
