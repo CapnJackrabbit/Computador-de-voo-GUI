@@ -1,9 +1,9 @@
 from tkinter import *
-import subida, tas, dvt, acd
+import subida, tas, dvt, acd, descida
 from PIL import Image, ImageTk
 
 janela = Tk()
-janela.title('Computador de voo')
+janela.title('Computador de voo - v. 1.0')
 janela.geometry('220x380')
 janela.resizable(False,False)
 
@@ -31,7 +31,7 @@ botao3.place(x=25, y=200)
 botao4 = Button(frame, text='Calculo de DVT', command=dvt.janela_callback, height=1, width=15)
 botao4.place(x=25, y=250)
 
-botao5 = Button(frame, text='Calculo de descida', command=subida, height=1, width=15, fg='red')
+botao5 = Button(frame, text='Calculo de descida', command=descida.janela_callback, height=1, width=15)
 botao5.place(x=25, y=300)
 
 janela.mainloop()
