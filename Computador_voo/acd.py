@@ -70,10 +70,6 @@ def calcular_acd(entrada_rumo,entrada_dir_vento,entrada_tas,entrada_vel_vento,re
         acd = velocidade_vento / nm_min
 
         proa_90, proa_180, proa_270, proa = calculate_relative_proas(proa_usuario)
-        print()
-        print(f"Través direito: {proa_90} graus")
-        print(f"Recíproca: {proa_180} graus")
-        print(f"Través esquerdo: {proa_270} graus")
 
         resultado['text'] = str('Través direito {} graus\nTravés esquerdo {} graus\nReciproca {} graus'.format(proa_90,proa_270,proa_180))
 

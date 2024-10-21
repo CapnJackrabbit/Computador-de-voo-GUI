@@ -34,16 +34,6 @@ def calcular_subida(entrada_elevacao,entrada_fl,entrada_temperatura,entrada_raza
     
     resultado['text'] = str('Variação de altura: {} pés\nTempo: {:.2f} minutos\nVariação de temperatura: {:.2f} °C\nTemperatura do FL: {:.2f} °C\n Alt. media de subida: {} pés\nTemp. media de subida {:.2f} °C\nVelocidade media aerodinâmica de subida: {:.2f} nos\nDistância ate o TOC: {:.2f}'.format(delta_altura,tempo,delta_temp,temp_fl,ams,tms,vams,toc))
 
-    print()
-    print('Variação de altura: {} pés'.format(delta_altura))
-    print('Tempo: {:.1f} minutos'.format(tempo))
-    print('Variação de temperatura: {} °C'.format(delta_temp))
-    print('Temperatura no FL: {:.1f} °C'.format(temp_fl))
-    print('Altitude média de subida: {} pés'.format(ams))
-    print('Temperatura média de subida: {:.1f} °C'.format(tms))
-    print('Velocidade média aerodinâmica de subida: {:.1f} nós'.format(vams))
-    print('Distância até o TOC: {:.2f} NM'.format(toc))
-
 
 def janela_callback():
     janela_subida = Tk()
