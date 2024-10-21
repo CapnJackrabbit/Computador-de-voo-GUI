@@ -3,7 +3,7 @@ import subida, tas, dvt, acd, descida
 from PIL import Image, ImageTk
 
 janela = Tk()
-janela.title('Computador de voo - v. 1.0')
+janela.title('Computador de voo - v. 2.0')
 janela.geometry('220x380')
 janela.resizable(False,False)
 

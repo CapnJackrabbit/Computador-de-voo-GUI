@@ -58,11 +58,11 @@ def calcular_acd(entrada_rumo,entrada_dir_vento,entrada_tas,entrada_vel_vento,re
 
         tas = float(entrada_tas.get())
         if tas < 0:
-            messagebox.showerror('Erro!', 'A TAS nao pode ser negativa')
+            messagebox.showerror('Erro!', 'A TAS não pode ser negativa')
             raise ValueError
         velocidade_vento = float(entrada_vel_vento.get())
         if velocidade_vento < 0:
-            messagebox.showerror('Erro!', 'A velocidade do vento nao pode ser negativa')
+            messagebox.showerror('Erro!', 'A velocidade do vento não pode ser negativa')
             raise ValueError
 
         nm_min = tas / 60
@@ -75,7 +75,7 @@ def calcular_acd(entrada_rumo,entrada_dir_vento,entrada_tas,entrada_vel_vento,re
         print(f"Recíproca: {proa_180} graus")
         print(f"Través esquerdo: {proa_270} graus")
 
-        resultado['text'] = str('Traves direito {} graus\nTraves esquerdo {} graus\nReciproca {} graus'.format(proa_90,proa_270,proa_180))
+        resultado['text'] = str('Través direito {} graus\nTravés esquerdo {} graus\nReciproca {} graus'.format(proa_90,proa_270,proa_180))
 
         diferenca_vento = (proa - vento_relativo) % 360
         if diferenca_vento > 270 and proa > 270:
@@ -86,22 +86,18 @@ def calcular_acd(entrada_rumo,entrada_dir_vento,entrada_tas,entrada_vel_vento,re
         diferenca_vento_reciproca = (vento_relativo - proa_180) % 360
         reciproca_real = proa_180
         if diferenca_vento < 90:
-            resultado2['text'] = str('vento de proa pela esquerda')
-            print('Vento de proa pela esquerda')
+            resultado2['text'] = str('Vento de proa pela esquerda')
             tag_vento = 'hw'
         elif diferenca_vento > 90 and diferenca_vento < 180:
             reciproca_real = diferenca_vento_reciproca
-            resultado2['text'] = str('vvento de cauda pela esquerda')
-            print('Vento de cauda pela esquerda')
+            resultado2['text'] = str('Vento de cauda pela esquerda')
             tag_vento = 'tw'
         elif diferenca_vento > 180 and diferenca_vento < 270:
             reciproca_real = 360 - diferenca_vento_reciproca
-            resultado2['text'] = str('vento de cauda pela direita')
-            print('Vento de cauda pela direita')
+            resultado2['text'] = str('Vento de cauda pela direita')
             tag_vento = 'tw'
         else:
-            resultado2['text'] = str('vento de proa pela direita')
-            print('Vento de proa pela direita')
+            resultado2['text'] = str('Vento de proa pela direita')
             tag_vento = 'hw'
 
         resultado3['text'] = str('O ângulo de correção de deriva máximo é {:.2f} graus'.format(acd))
@@ -126,44 +122,42 @@ def calcular_acd(entrada_rumo,entrada_dir_vento,entrada_tas,entrada_vel_vento,re
 
         if velocidade_final > tas:
             resultado6['text'] = str('Componente de cauda')
-            print('Componente de cauda')
         else:
             resultado6['text'] = str('Componente de proa')
-            print('Componente de proa')
 
 
     except ValueError:
-        print("O valor inserido é inválido.")
+        messagebox.showerror('Erro!', 'Um ou mais valores inseridos são inválidos.')
 
 
 def janela_callback():
     janela_acd = Tk()
-    janela_acd.title('Computador de voo  ->  Calculo de angulo de correcao de deriva')
+    janela_acd.title('Computador de voo  ->  Cálculo de angulo de correção de deriva')
     janela_acd.geometry('790x260')
     janela_acd.resizable(False,False)
 
-    frame = LabelFrame(janela_acd, text='Calculo de ACD')
+    frame = LabelFrame(janela_acd, text='Cálculo de ACD')
     frame.place(x=10, y=0, height=250, width=380)
 
     frame_res = LabelFrame(janela_acd, text='Resultado')
     frame_res.place(x=400, y=0, height=250, width=380)
 
-    rumo = Label(janela_acd, text='  Rumo ')
+    rumo = Label(janela_acd, text='  Rumo (graus)  ')
     rumo.place(x=20, y=30)
     entrada_rumo = Entry(janela_acd)
     entrada_rumo.place(x=200, y=30)
 
-    dir_vento = Label(janela_acd, text='  Direcao do vento ')
+    dir_vento = Label(janela_acd, text='  Direção do vento (graus) ')
     dir_vento.place(x=20, y=60)
     entrada_dir_vento = Entry(janela_acd)
     entrada_dir_vento.place(x=200, y=60)
 
-    tas = Label(janela_acd, text='  TAS ')
+    tas = Label(janela_acd, text='  TAS (nós)  ')
     tas.place(x=20, y=90)
     entrada_tas = Entry(janela_acd)
     entrada_tas.place(x=200, y=90)
 
-    vel_vento = Label(janela_acd, text='  Velocidade do vento ')
+    vel_vento = Label(janela_acd, text='  Velocidade do vento (nós) ')
     vel_vento.place(x=20, y=120)
     entrada_vel_vento = Entry(janela_acd)
     entrada_vel_vento.place(x=200, y=120)

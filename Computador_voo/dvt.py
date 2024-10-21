@@ -59,6 +59,9 @@ def janela_callback():
     entrada_velocidade = Entry(janela_subida)
     entrada_velocidade.place(x=200, y=90)
 
+    instrucao = Label(janela_subida, text='Insira 0 (zero) no campo que deseja descobrir', fg='red',font='arial')
+    instrucao.place(x=30, y=150)
+
     botao_calculo = Button(janela_subida, text='Calcular!', command= lambda: calcular(entrada_tempo,entrada_distancia,entrada_velocidade,resultado))
     botao_calculo.place(x=170, y=200)
 
